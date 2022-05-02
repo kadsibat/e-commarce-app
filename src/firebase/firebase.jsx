@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { onayMesaj } from "../helper/toast";
+import { bilgiMesaj, onayMesaj } from "../helper/toast";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA62meaMDXn6WMQYRCaGewI4SMU6ja8QII",
@@ -47,6 +47,7 @@ export const kullaniciGiris = (email, password) => {
 
 export const kullaniciCikis = () => {
   signOut(auth);
+  bilgiMesaj("Çıkış yapıldı")
 };
 
 export const mevcutKullanici = (setCurrentUser) => {

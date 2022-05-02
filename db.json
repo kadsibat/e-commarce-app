@@ -1,0 +1,98 @@
+{
+  "Shoes": [
+    {
+      "id": 1,
+      "title": "Nike Legend Essential 2 Beyaz Siyah Erkek Koşu Ayakkabısı",
+      "price": "899,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0101461_nike-cq9356-002-nike-legend-essential-2-2000cq9356002.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 2,
+      "title": "Nike Legend Essential 2 Siyah Beyaz Erkek Koşu Ayakkabısı",
+      "price": "899,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0102305_nike-cq9356-001-nike-legend-essential-2-2000cq9356001.jpeg",
+      "comments":[]
+
+    },
+    {
+      "id": 3,
+      "title": "Nike Court Vision Siyah Erkek Sneaker",
+      "price": "1.249,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0121527_nike-dh2987-001-nike-court-vision-lo-nn-2000dh2987001.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 4,
+      "title": "Nike Star Runner 3 Siyah Kadın Spor Ayakkabı",
+      "price": "699,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0121911_nike-da2776-002-nike-star-runner-3-gs-2000da2776002.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 5,
+      "title": "adidas Runfalcon 2.0 Siyah Erkek Koşu Ayakkabısı",
+      "price": "629,00 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0125253_adidas-runfalcon-2-0-siyah-erkek-kosu-ayakkabisi-g58096-2008g58096.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 6,
+      "title": "adidas Court Bold Siyah Kadın Tenis Ayakkabısı ",
+      "price": "629,00 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0113328_adidas-court-bold-siyah-kadin-tenis-ayakkabisi-gz2693-2008gz2693.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 7,
+      "title": "Nike Defyallday Beyaz Unisex Spor Ayakkabı",
+      "price": "899,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0128110_nike-defyallday-beyaz-unisex-spor-ayakkabi-dj1196-100-2000dj1196100.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 8,
+      "title": "Puma Up Tdp Lacivert Erkek Sneaker ",
+      "price": "629,90 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0107159_puma-38278603-puma-up-tdp-peacoat-puma-white-220238278603.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 9,
+      "title": "Vans Filmore Decon Bordo Erkek Sneaker",
+      "price": "799,00 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0129146_vans-filmore-decon-bordo-erkek-sneaker-vn0a3wkz5ln1-2052vn0a3wkz5ln1.jpeg",
+      "comments":[]
+    },
+    {
+      "id": 10,
+      "title": "Reebok Reago Essential 2.0 Lacivert Kadın Spor Ayakkabısı",
+      "price": "441,00 TL",
+      "image": "https://img-ayakkabidunyasi.mncdn.com/Content/Images/Thumbs/0105829_reebok-gz8308-reebok-reago-essential-2-0-2046gz8308.jpeg",
+      "comments":[]
+    }
+  ],
+  "Trousers":[
+    {
+      "id": 11,
+      "title": "Erkek Italyan Kesim Denim Siyah Kot Pantolon",
+      "price": "136,16 TL",
+      "image": "https://cdn.dsmcdn.com/ty376/product/media/images/20220331/12/79619793/114427038/1/1_org_zoom.jpg",
+      "comments":[]
+    },
+    {
+      "id": 12,
+      "title": "Slim Fit Dar Kesim 5 Cep Casual Pantolon",
+      "price": "159,99 TL",
+      "image": "https://cdn.dsmcdn.com/ty400/product/media/images/20220414/22/92026480/449606103/1/1_org_zoom.jpg",
+      "comments":[]
+    },
+    {
+      "id": 13,
+      "title": "Ser Joven Erkek Slim Fit Bej Keten Pantolon",
+      "price": "124,54 TL",
+      "image": "https://cdn.dsmcdn.com/ty145/product/media/images/20210712/14/109756285/202261605/1/1_org_zoom.jpg",
+      "comments":[]
+    }
+  ]
+}

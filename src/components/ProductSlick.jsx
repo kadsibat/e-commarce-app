@@ -1,9 +1,11 @@
 
-import React from "react";
-import logo from "../assets/logo.png";
+import React, { useContext } from "react";
 import Slider from "react-slick";
-import "./style.css"
+import "./style.css";
+import { AppContext } from "../context/AppContext";
+
 function ProductSlick() {
+  const {product} = useContext(AppContext);
   var settings = {
     dots: true,
     infinite: false,
@@ -38,15 +40,17 @@ function ProductSlick() {
       },
     ],
   };
+  console.log(product);
   return (
     <div className="slick">
       <Slider {...settings}>
         {
-          [1,2,3,4,5,6,7,8].map((item,index) => {
+          product?.map((item,index) => {
             return(
               <div className="slick-div" key={index}>
-              <img src={logo} alt="" width={"250px"} style={{margin:"auto"}}/>
-              merhaba
+              <img src={item.image} alt="" width={"150px"} style={{margin:"auto"}}/>
+              <h4>{item.title}</h4>
+              <p>{item.price}</p>
             </div>
             )
           })

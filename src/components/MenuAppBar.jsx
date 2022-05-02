@@ -46,7 +46,7 @@ export default function MenuAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#83BD75",display:"flex", justifyContent:"space-between"}}>
+      <AppBar position="static" sx={{ backgroundColor: "#0A1931",display:"flex", justifyContent:"space-between"}}>
         <Toolbar>
           <IconButton
             size="large"

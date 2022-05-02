@@ -12,7 +12,11 @@ import { GiBallerinaShoes } from "react-icons/gi";
 import { FaTshirt } from "react-icons/fa";
 import { FaSocks } from "react-icons/fa";
 function Main() {
-  const {state,setState} = useContext(AppContext)
+  const {state,setState,setCategory} = useContext(AppContext)
+  const handleCategory = (e) => {
+    console.log(e.target.innerText);
+    setCategory(e.target.innerText)
+  }
   return (
     <div>
       <Drawer anchor="left" open={state} onClose={() => setState(false)}>
@@ -22,7 +26,7 @@ function Main() {
         </Typography>
         <List>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleCategory}>
               <ListItemIcon>
                 <GiTrousers />
               </ListItemIcon>
@@ -30,7 +34,7 @@ function Main() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleCategory}>
               <ListItemIcon>
                 <GiBallerinaShoes />
               </ListItemIcon>
