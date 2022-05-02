@@ -9,8 +9,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { AppContext } from "../context/AppContext";
-import Avatar from "@mui/material/Avatar";
-import logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
 import { kullaniciCikis } from "../firebase/firebase";
 
@@ -65,13 +63,8 @@ export default function MenuAppBar() {
               sx={{ width: 100, height: 100 }}
             />
           </Typography> */}
-          <Typography variant="img" component="div" sx={{ flexGrow: 1 }}>
-            <Avatar
-              alt="my logo"
-              src={logo}
-              sx={{ width: 70, height: 70 }}
-              onClick={() => navigate("/")}
-            />
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1,fontFamily:"Patrick Hand, cursive",color:"pink" }}>
+            paramolsadabenalsam.com
           </Typography>
           <div>
             <IconButton

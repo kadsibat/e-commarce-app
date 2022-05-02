@@ -7,15 +7,19 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { GiTrousers } from "react-icons/gi";
-import { GiUnderwearShorts } from "react-icons/gi";
+import { GiPirateCoat } from "react-icons/gi";
 import { GiBallerinaShoes } from "react-icons/gi";
 import { FaTshirt } from "react-icons/fa";
 import { FaSocks } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 function Main() {
-  const {state,setState,setCategory} = useContext(AppContext)
+  const {state,setState,setCategory} = useContext(AppContext);
+  const navigate = useNavigate()
   const handleCategory = (e) => {
     console.log(e.target.innerText);
-    setCategory(e.target.innerText)
+    setCategory(e.target.innerText);
+    setState(false)
+    navigate("/")
   }
   return (
     <div>
@@ -42,7 +46,7 @@ function Main() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleCategory}>
               <ListItemIcon>
                 <FaTshirt />
               </ListItemIcon>
@@ -50,15 +54,15 @@ function Main() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleCategory}>
               <ListItemIcon>
-                <GiUnderwearShorts />
+                <GiPirateCoat />
               </ListItemIcon>
-              <ListItemText primary="Underwear" />
+              <ListItemText primary="Coats" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={handleCategory}>
               <ListItemIcon>
                 <FaSocks />
               </ListItemIcon>
