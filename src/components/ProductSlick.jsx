@@ -42,9 +42,9 @@ function ProductSlick() {
     <div className="slick">
       <Slider {...settings}>
         {
-          [1,2,3,4,5,6,7,8].map((item) => {
+          [1,2,3,4,5,6,7,8].map((item,index) => {
             return(
-              <div className="slick-div">
+              <div className="slick-div" key={index}>
               <img src={logo} alt="" width={"250px"} style={{margin:"auto"}}/>
               merhaba
             </div>

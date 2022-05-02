@@ -12,10 +12,11 @@ import { AppContext } from "../context/AppContext";
 import Avatar from "@mui/material/Avatar";
 import logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
+import { kullaniciCikis } from "../firebase/firebase";
 
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const {setState } = React.useContext(AppContext);
+  const {setState,currentUser } = React.useContext(AppContext);
   const navigate = useNavigate()
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -35,6 +36,10 @@ export default function MenuAppBar() {
   }
   const handleRegiter = () => {
     navigate("/register");
+    setAnchorEl(null);
+  }
+  const handleLogout=() => {
+    kullaniciCikis();
     setAnchorEl(null);
   }
   
@@ -79,24 +84,46 @@ export default function MenuAppBar() {
             >
               <AccountCircle />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleLogin}>login</MenuItem>
-              <MenuItem onClick={handleRegiter}>Register</MenuItem>
-            </Menu>
+            {
+              !currentUser ? (
+                <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleLogin}>login</MenuItem>
+                <MenuItem onClick={handleRegiter}>Register</MenuItem>
+              </Menu>
+              ):(
+                <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>                
+              </Menu>
+              )
+            }
           </div>
         </Toolbar>
       </AppBar>

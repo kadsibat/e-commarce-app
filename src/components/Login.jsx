@@ -7,6 +7,7 @@ import { Formik } from "formik";
 import "./style.css";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { kullaniciGiris } from "../firebase/firebase";
 // import { googleLogin, kullaniciGiris } from "../helpers/firebase";
 // import AppContext from "../contexts/AppContext";
 // import GoogleIcon from "@mui/icons-material/Google";
@@ -32,12 +33,8 @@ function Login() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    //   alert(
-    //       `
-    //       email:${values.email}
-    //       `
-    //   )
-    
+    kullaniciGiris(values.email,values.password);
+    navigate("/")
     resetForm();
   };
 
