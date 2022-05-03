@@ -16,7 +16,6 @@ function Main() {
   const {state,setState,setCategory} = useContext(AppContext);
   const navigate = useNavigate()
   const handleCategory = (e) => {
-    console.log(e.target.innerText);
     setCategory(e.target.innerText);
     setState(false)
     navigate("/")

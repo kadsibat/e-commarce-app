@@ -5,6 +5,7 @@ import MenuAppBar from "../components/MenuAppBar";
 import Main from "../components/Main";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import Footer from "../components/Footer";
 
 function AppRouter() {
   return (
@@ -17,6 +18,7 @@ function AppRouter() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

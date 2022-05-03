@@ -8,26 +8,37 @@ const AppContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [category, setCategory] = useState("Shoes");
   const [product, setProduct] = useState();
+  const [loadingScreen, setLoadingScreen] = useState(true);
   const baseUrl = "http://localhost:5000/";
 
   useEffect(() => {
     mevcutKullanici(setCurrentUser);
   }, []);
   useEffect(() => {
+    setLoadingScreen(true);
     axios
       .get(baseUrl + category)
       .then((result) => {
         setProduct(result.data);
+        setTimeout(() => {
+          setLoadingScreen(false);
+        }, 500);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [category]);
-  console.log("object", category);
 
   return (
     <AppContext.Provider
-      value={{ state, setState, currentUser, setCategory, product }}
+      value={{
+        state,
+        setState,
+        currentUser,
+        setCategory,
+        product,
+        loadingScreen,
+      }}
     >
       {children}
     </AppContext.Provider>

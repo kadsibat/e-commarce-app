@@ -3,9 +3,10 @@ import Slider from "react-slick";
 import "./style.css";
 import { AppContext } from "../context/AppContext";
 import ProductGrid from "./ProductGrid";
+import Loading from "./Loading";
 
 function ProductSlick() {
-  const { product } = useContext(AppContext);
+  const { product ,loadingScreen} = useContext(AppContext);
   var settings = {
     dots: true,
     infinite: false,
@@ -40,9 +41,9 @@ function ProductSlick() {
       },
     ],
   };
-  console.log(product);
   return (
     <div>
+      {loadingScreen && <Loading/>}
       <div className="slick">
         <Slider {...settings}>
           {product?.map((item, index) => {

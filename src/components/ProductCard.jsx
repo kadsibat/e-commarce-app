@@ -9,7 +9,6 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function ProductCard({item}) {
-    console.log(item)
   return (
     <Card sx={{ maxWidth: 345,margin:"1rem auto"}}>
       <CardMedia

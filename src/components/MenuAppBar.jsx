@@ -11,11 +11,12 @@ import Menu from "@mui/material/Menu";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { kullaniciCikis } from "../firebase/firebase";
+import Basket from "./Basket";
 
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const {setState,currentUser } = React.useContext(AppContext);
-  const navigate = useNavigate()
+  const { setState, currentUser } = React.useContext(AppContext);
+  const navigate = useNavigate();
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -31,20 +32,26 @@ export default function MenuAppBar() {
   const handleLogin = () => {
     navigate("/login");
     setAnchorEl(null);
-  }
+  };
   const handleRegiter = () => {
     navigate("/register");
     setAnchorEl(null);
-  }
-  const handleLogout=() => {
+  };
+  const handleLogout = () => {
     kullaniciCikis();
     setAnchorEl(null);
-  }
-  
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#0A1931",display:"flex", justifyContent:"space-between"}}>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "#0A1931",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -63,7 +70,17 @@ export default function MenuAppBar() {
               sx={{ width: 100, height: 100 }}
             />
           </Typography> */}
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1,fontFamily:"Patrick Hand, cursive",color:"pink" }}>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              fontFamily: "Patrick Hand, cursive",
+              color: "pink",
+              cursor: "pointer",
+            }}
+            onClick={() => navigate("/")}
+          >
             paramolsadabenalsam.com
           </Typography>
           <div>
@@ -77,9 +94,9 @@ export default function MenuAppBar() {
             >
               <AccountCircle />
             </IconButton>
-            {
-              !currentUser ? (
-                <Menu
+
+            {!currentUser ? (
+              <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -97,8 +114,8 @@ export default function MenuAppBar() {
                 <MenuItem onClick={handleLogin}>login</MenuItem>
                 <MenuItem onClick={handleRegiter}>Register</MenuItem>
               </Menu>
-              ):(
-                <Menu
+            ) : (
+              <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -113,11 +130,12 @@ export default function MenuAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>                
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
-              )
-            }
+            )}
           </div>
+          {currentUser && currentUser.displayName}
+          {currentUser && <Basket/>}
         </Toolbar>
       </AppBar>
     </Box>

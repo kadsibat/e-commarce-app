@@ -58,3 +58,19 @@ h1 {
 .grid {
     margin-top: 5rem;
 }
+.footer {
+    padding: 0.7rem;
+    background-color: #0A1931;
+    color: white;
+}
+
+
+.icon{
+    color: white;
+    transition: all 0.5s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: chocolate;
+}
