@@ -9,8 +9,8 @@ const AppContextProvider = ({ children }) => {
   const [category, setCategory] = useState("Shoes");
   const [product, setProduct] = useState();
   const [loadingScreen, setLoadingScreen] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
   const baseUrl = "http://localhost:5000/";
-
   useEffect(() => {
     mevcutKullanici(setCurrentUser);
   }, []);
@@ -38,6 +38,9 @@ const AppContextProvider = ({ children }) => {
         setCategory,
         product,
         loadingScreen,
+        setWidth,
+        width,
+        baseUrl
       }}
     >
       {children}

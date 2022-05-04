@@ -33,8 +33,7 @@ function Login() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    kullaniciGiris(values.email,values.password);
-    navigate("/")
+    kullaniciGiris(values.email,values.password,navigate);
     resetForm();
   };
 

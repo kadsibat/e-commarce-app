@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { bilgiMesaj, onayMesaj } from "../helper/toast";
+import { bilgiMesaj, onayMesaj ,olumsuzMesaj} from "../helper/toast";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA62meaMDXn6WMQYRCaGewI4SMU6ja8QII",
@@ -35,19 +35,21 @@ export const yeniKullaniciKayit = (email, password, isimSoyisim, navigate) => {
     .catch((error) => {});
 };
 
-export const kullaniciGiris = (email, password) => {
+export const kullaniciGiris = (email, password, navigate) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       onayMesaj("Giriş Başarılı");
+      navigate("/");
     })
     .catch((error) => {
       console.log(error);
+      olumsuzMesaj("Email veya Şifre yanlış!!!")
     });
 };
 
 export const kullaniciCikis = () => {
   signOut(auth);
-  bilgiMesaj("Çıkış yapıldı")
+  bilgiMesaj("Çıkış yapıldı");
 };
 
 export const mevcutKullanici = (setCurrentUser) => {

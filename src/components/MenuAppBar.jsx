@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,8 +13,10 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { kullaniciCikis } from "../firebase/firebase";
 import Basket from "./Basket";
+import "./style.css";
 
 export default function MenuAppBar() {
+  const { width, setWidth } = React.useContext(AppContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { setState, currentUser } = React.useContext(AppContext);
   const navigate = useNavigate();
@@ -41,9 +44,15 @@ export default function MenuAppBar() {
     kullaniciCikis();
     setAnchorEl(null);
   };
+  React.useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth)
+    }
 
+    window.addEventListener("resize", handleResize);
+  },[]);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar
         position="static"
         sx={{
@@ -71,7 +80,7 @@ export default function MenuAppBar() {
             />
           </Typography> */}
           <Typography
-            variant="h4"
+          variant={(width >= 500 && width <800) ? ("h5"):(width >= 800) ? ("h3") : ("p")}
             component="div"
             sx={{
               flexGrow: 1,
@@ -80,6 +89,7 @@ export default function MenuAppBar() {
               cursor: "pointer",
             }}
             onClick={() => navigate("/")}
+            className="header"
           >
             paramolsadabenalsam.com
           </Typography>
@@ -135,7 +145,7 @@ export default function MenuAppBar() {
             )}
           </div>
           {currentUser && currentUser.displayName}
-          {currentUser && <Basket/>}
+          {currentUser && <Basket />}
         </Toolbar>
       </AppBar>
     </Box>

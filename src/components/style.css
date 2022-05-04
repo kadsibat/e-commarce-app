@@ -74,3 +74,8 @@ h1 {
     transform: scale(1.2);
     color: chocolate;
 }
+
+.header {
+    width: 100px;
+    font-variant:h1;
+}

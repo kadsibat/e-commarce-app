@@ -6,6 +6,7 @@ import Main from "../components/Main";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Footer from "../components/Footer";
+import Detail from "../components/Detail";
 
 function AppRouter() {
   return (
@@ -17,6 +18,7 @@ function AppRouter() {
           <Route path="/" element={<ProductSlick />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/detail" element={<Detail />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

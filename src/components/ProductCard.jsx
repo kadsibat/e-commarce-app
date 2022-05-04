@@ -5,12 +5,14 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useNavigate } from "react-router-dom";
 
-export default function ProductCard({item}) {
+export default function ProductCard({ item }) {
+  const navigate = useNavigate()
   return (
-    <Card sx={{ maxWidth: 345,margin:"1rem auto"}}>
+    <Card sx={{ maxWidth: 345, margin: "1rem auto" }}>
       <CardMedia
         component="img"
         height="300"
@@ -19,19 +21,19 @@ export default function ProductCard({item}) {
       />
       <CardContent>
         <Typography variant="h6" color="text.secondary">
-            {item.title}
+          {item.title}
         </Typography>
       </CardContent>
       <CardContent>
         <Typography variant="p" color="text.secondary">
-            {item.price}
+          {item.price}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to basket">
           <AddShoppingCartIcon />
         </IconButton>
-        <IconButton aria-label="read more">
+        <IconButton aria-label="read more" onClick={() =>navigate("/detail",{state:{item}}) }>
           <MoreHorizIcon />
         </IconButton>
       </CardActions>
