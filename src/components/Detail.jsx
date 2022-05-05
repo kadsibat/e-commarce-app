@@ -18,6 +18,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { olumsuzMesaj, onayMesaj } from "../helper/toast";
 
+
 function Detail() {
   const location = useLocation();
   const [detail, setDetail] = useState();
